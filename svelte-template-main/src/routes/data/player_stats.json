@@ -1,0 +1,940 @@
+{
+    "Andrew Wiggins": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 107,
+            "count": 285,
+            "mean": 0.37543859649122807
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 92,
+            "count": 219,
+            "mean": 0.4200913242009132
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 42,
+            "count": 87,
+            "mean": 0.4827586206896552
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 67,
+            "count": 180,
+            "mean": 0.37222222222222223
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 159,
+            "count": 222,
+            "mean": 0.7162162162162162
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 8,
+            "count": 26,
+            "mean": 0.3076923076923077
+        }
+    ],
+    "Chris Paul": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 58,
+            "count": 179,
+            "mean": 0.3240223463687151
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 126,
+            "count": 209,
+            "mean": 0.6028708133971292
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 3,
+            "count": 13,
+            "mean": 0.23076923076923078
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 154,
+            "count": 297,
+            "mean": 0.5185185185185185
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 20,
+            "count": 31,
+            "mean": 0.6451612903225806
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 2,
+            "count": 4,
+            "mean": 0.5
+        }
+    ],
+    "Darius Garland": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 153,
+            "count": 396,
+            "mean": 0.38636363636363635
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 114,
+            "count": 236,
+            "mean": 0.4830508474576271
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 14,
+            "count": 31,
+            "mean": 0.45161290322580644
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 102,
+            "count": 218,
+            "mean": 0.46788990825688076
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 151,
+            "count": 263,
+            "mean": 0.5741444866920152
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 7,
+            "count": 27,
+            "mean": 0.25925925925925924
+        }
+    ],
+    "DeMar DeRozan": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 32,
+            "count": 81,
+            "mean": 0.3950617283950617
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 188,
+            "count": 359,
+            "mean": 0.5236768802228412
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 11,
+            "count": 29,
+            "mean": 0.3793103448275862
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 348,
+            "count": 741,
+            "mean": 0.46963562753036436
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 188,
+            "count": 293,
+            "mean": 0.6416382252559727
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 7,
+            "count": 28,
+            "mean": 0.25
+        }
+    ],
+    "Dejounte Murray": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 79,
+            "count": 236,
+            "mean": 0.3347457627118644
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 146,
+            "count": 322,
+            "mean": 0.453416149068323
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 10,
+            "count": 36,
+            "mean": 0.2777777777777778
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 134,
+            "count": 318,
+            "mean": 0.42138364779874216
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 197,
+            "count": 308,
+            "mean": 0.6396103896103896
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 7,
+            "count": 21,
+            "mean": 0.3333333333333333
+        }
+    ],
+    "Devin Booker": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 155,
+            "count": 407,
+            "mean": 0.3808353808353808
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 130,
+            "count": 285,
+            "mean": 0.45614035087719296
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 11,
+            "count": 30,
+            "mean": 0.36666666666666664
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 219,
+            "count": 467,
+            "mean": 0.4689507494646681
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 132,
+            "count": 194,
+            "mean": 0.6804123711340206
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 15,
+            "count": 36,
+            "mean": 0.4166666666666667
+        }
+    ],
+    "Donovan Mitchell": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 207,
+            "count": 585,
+            "mean": 0.35384615384615387
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 137,
+            "count": 292,
+            "mean": 0.4691780821917808
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 13,
+            "count": 33,
+            "mean": 0.3939393939393939
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 67,
+            "count": 153,
+            "mean": 0.43790849673202614
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 181,
+            "count": 277,
+            "mean": 0.6534296028880866
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 12,
+            "count": 34,
+            "mean": 0.35294117647058826
+        }
+    ],
+    "Fred VanVleet": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 198,
+            "count": 540,
+            "mean": 0.36666666666666664
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 44,
+            "count": 135,
+            "mean": 0.32592592592592595
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 20,
+            "count": 42,
+            "mean": 0.47619047619047616
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 85,
+            "count": 191,
+            "mean": 0.44502617801047123
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 74,
+            "count": 133,
+            "mean": 0.556390977443609
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 21,
+            "count": 50,
+            "mean": 0.42
+        }
+    ],
+    "Giannis Antetokounmpo": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 70,
+            "count": 234,
+            "mean": 0.29914529914529914
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 89,
+            "count": 218,
+            "mean": 0.40825688073394495
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 1,
+            "count": 4,
+            "mean": 0.25
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 85,
+            "count": 205,
+            "mean": 0.4146341463414634
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 444,
+            "count": 580,
+            "mean": 0.7655172413793103
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 0,
+            "count": 2,
+            "mean": 0.0
+        }
+    ],
+    "Ja Morant": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 77,
+            "count": 227,
+            "mean": 0.3392070484581498
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 171,
+            "count": 399,
+            "mean": 0.42857142857142855
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 6,
+            "count": 13,
+            "mean": 0.46153846153846156
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 18,
+            "count": 69,
+            "mean": 0.2608695652173913
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 303,
+            "count": 453,
+            "mean": 0.6688741721854304
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 5,
+            "count": 13,
+            "mean": 0.38461538461538464
+        }
+    ],
+    "James Harden": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 140,
+            "count": 421,
+            "mean": 0.332541567695962
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 82,
+            "count": 213,
+            "mean": 0.38497652582159625
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 3,
+            "count": 9,
+            "mean": 0.3333333333333333
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 21,
+            "count": 51,
+            "mean": 0.4117647058823529
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 156,
+            "count": 280,
+            "mean": 0.5571428571428572
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 5,
+            "count": 18,
+            "mean": 0.2777777777777778
+        }
+    ],
+    "Jayson Tatum": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 198,
+            "count": 565,
+            "mean": 0.3504424778761062
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 93,
+            "count": 231,
+            "mean": 0.4025974025974026
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 15,
+            "count": 51,
+            "mean": 0.29411764705882354
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 95,
+            "count": 257,
+            "mean": 0.36964980544747084
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 289,
+            "count": 425,
+            "mean": 0.68
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 18,
+            "count": 33,
+            "mean": 0.5454545454545454
+        }
+    ],
+    "Jimmy Butler": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 12,
+            "count": 59,
+            "mean": 0.2033898305084746
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 92,
+            "count": 209,
+            "mean": 0.44019138755980863
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 5,
+            "count": 24,
+            "mean": 0.20833333333333334
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 74,
+            "count": 196,
+            "mean": 0.37755102040816324
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 205,
+            "count": 308,
+            "mean": 0.6655844155844156
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 10,
+            "count": 31,
+            "mean": 0.3225806451612903
+        }
+    ],
+    "Joel Embiid": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 89,
+            "count": 237,
+            "mean": 0.3755274261603376
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 122,
+            "count": 303,
+            "mean": 0.40264026402640263
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 2,
+            "count": 7,
+            "mean": 0.2857142857142857
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 165,
+            "count": 391,
+            "mean": 0.4219948849104859
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 286,
+            "count": 389,
+            "mean": 0.7352185089974294
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 2,
+            "count": 6,
+            "mean": 0.3333333333333333
+        }
+    ],
+    "Karl-Anthony Towns": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 138,
+            "count": 331,
+            "mean": 0.4169184290030212
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 138,
+            "count": 269,
+            "mean": 0.5130111524163569
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 6,
+            "count": 17,
+            "mean": 0.35294117647058826
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 43,
+            "count": 121,
+            "mean": 0.35537190082644626
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 311,
+            "count": 459,
+            "mean": 0.6775599128540305
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 6,
+            "count": 17,
+            "mean": 0.35294117647058826
+        }
+    ],
+    "Kevin Durant": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 102,
+            "count": 277,
+            "mean": 0.36823104693140796
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 142,
+            "count": 276,
+            "mean": 0.5144927536231884
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 3,
+            "count": 7,
+            "mean": 0.42857142857142855
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 226,
+            "count": 407,
+            "mean": 0.5552825552825553
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 95,
+            "count": 132,
+            "mean": 0.7196969696969697
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 10,
+            "count": 16,
+            "mean": 0.625
+        }
+    ],
+    "Khris Middleton": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 143,
+            "count": 384,
+            "mean": 0.3723958333333333
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 76,
+            "count": 179,
+            "mean": 0.4245810055865922
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 11,
+            "count": 34,
+            "mean": 0.3235294117647059
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 128,
+            "count": 278,
+            "mean": 0.460431654676259
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 86,
+            "count": 130,
+            "mean": 0.6615384615384615
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 8,
+            "count": 16,
+            "mean": 0.5
+        }
+    ],
+    "LaMelo Ball": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 182,
+            "count": 473,
+            "mean": 0.38477801268498946
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 98,
+            "count": 241,
+            "mean": 0.4066390041493776
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 19,
+            "count": 47,
+            "mean": 0.40425531914893614
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 50,
+            "count": 133,
+            "mean": 0.37593984962406013
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 170,
+            "count": 315,
+            "mean": 0.5396825396825397
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 19,
+            "count": 43,
+            "mean": 0.4418604651162791
+        }
+    ],
+    "LeBron James": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 150,
+            "count": 412,
+            "mean": 0.3640776699029126
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 39,
+            "count": 108,
+            "mean": 0.3611111111111111
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 6,
+            "count": 15,
+            "mean": 0.4
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 78,
+            "count": 184,
+            "mean": 0.42391304347826086
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 362,
+            "count": 481,
+            "mean": 0.7525987525987526
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 5,
+            "count": 21,
+            "mean": 0.23809523809523808
+        }
+    ],
+    "Luka Doncic": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 192,
+            "count": 536,
+            "mean": 0.3582089552238806
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 196,
+            "count": 398,
+            "mean": 0.49246231155778897
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 7,
+            "count": 21,
+            "mean": 0.3333333333333333
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 81,
+            "count": 215,
+            "mean": 0.3767441860465116
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 163,
+            "count": 221,
+            "mean": 0.7375565610859729
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 2,
+            "count": 10,
+            "mean": 0.2
+        }
+    ],
+    "Nikola Jokic": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 94,
+            "count": 274,
+            "mean": 0.34306569343065696
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 249,
+            "count": 409,
+            "mean": 0.60880195599022
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 2,
+            "count": 6,
+            "mean": 0.3333333333333333
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 68,
+            "count": 127,
+            "mean": 0.5354330708661418
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 350,
+            "count": 487,
+            "mean": 0.7186858316221766
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 1,
+            "count": 5,
+            "mean": 0.2
+        }
+    ],
+    "Rudy Gobert": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 0,
+            "count": 2,
+            "mean": 0.0
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 20,
+            "count": 58,
+            "mean": 0.3448275862068966
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 0,
+            "count": 1,
+            "mean": 0.0
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 342,
+            "count": 445,
+            "mean": 0.7685393258426966
+        }
+    ],
+    "Stephen Curry": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 261,
+            "count": 668,
+            "mean": 0.3907185628742515
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 67,
+            "count": 137,
+            "mean": 0.48905109489051096
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 13,
+            "count": 39,
+            "mean": 0.3333333333333333
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 59,
+            "count": 134,
+            "mean": 0.44029850746268656
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 124,
+            "count": 204,
+            "mean": 0.6078431372549019
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 11,
+            "count": 37,
+            "mean": 0.2972972972972973
+        }
+    ],
+    "Trae Young": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 217,
+            "count": 580,
+            "mean": 0.3741379310344828
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 159,
+            "count": 367,
+            "mean": 0.4332425068119891
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 7,
+            "count": 10,
+            "mean": 0.7
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 140,
+            "count": 265,
+            "mean": 0.5283018867924528
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 179,
+            "count": 302,
+            "mean": 0.5927152317880795
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 9,
+            "count": 19,
+            "mean": 0.47368421052631576
+        }
+    ],
+    "Zach LaVine": [
+        {
+            "BASIC_ZONE": "Above the Break 3",
+            "sum": 147,
+            "count": 402,
+            "mean": 0.3656716417910448
+        },
+        {
+            "BASIC_ZONE": "In The Paint (Non-RA)",
+            "sum": 39,
+            "count": 115,
+            "mean": 0.3391304347826087
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 17,
+            "count": 37,
+            "mean": 0.4594594594594595
+        },
+        {
+            "BASIC_ZONE": "Mid-Range",
+            "sum": 101,
+            "count": 247,
+            "mean": 0.4089068825910931
+        },
+        {
+            "BASIC_ZONE": "Restricted Area",
+            "sum": 240,
+            "count": 349,
+            "mean": 0.6876790830945558
+        },
+        {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 21,
+            "count": 36,
+            "mean": 0.5833333333333334
+        }
+    ]
+}
