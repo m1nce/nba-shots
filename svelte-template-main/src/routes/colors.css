@@ -1,9 +1,22 @@
 #container {
     position: relative;
+    width: 100%; /* This makes the container responsive to the width of the viewport */
+    /* height-to-width aspect ratio calculation */
+    padding-top: calc((height / width) * 100%);
+    height: 0; /* This uses padding to maintain aspect ratio */
   }
   
   #overlay {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
   }
+  
+  img {
+    width: 100%; /* This makes the image responsive to the width of the container */
+    height: auto; /* This maintains the image's aspect ratio */
+    display: block; /* This will prevent any white space at the bottom */
+  }
+  
