@@ -3,7 +3,6 @@
     import pkg from 'lodash';
     const { debounce } = pkg;
     import * as d3 from 'd3';
-
     let svg;
     let showPlayerInfo = true;
     let selectedPlayer = "LeBron James";
@@ -48,6 +47,10 @@
     let mid_left = {x: 6, y: 40.2, width: 28, height: 28.5}
     let mid_right = {x: 66, y: 40.2, width: 27.8, height: 28.5}
     let mid_middle = { x: 50, y: 14};
+    let playershooting = 'src/routes/data/player_stats.json';
+    let playerShootingData;
+
+
 
     // Check if document is defined before running client-side code
     if (typeof document !== 'undefined') {
@@ -58,7 +61,13 @@
             svg = d3.select('#overlay');
 
             window.addEventListener('resize', debounce(handleResize, 300));
-            renderSVG();
+            fetch(playershooting)
+            .then(response => response.json())
+            .then(data => {
+                playerShootingData = data;
+                renderSVG();
+        })
+        .catch(error => console.error('Error loading player shooting data:', error));
         });
 
         onDestroy(() => {
@@ -71,6 +80,21 @@
         width = container.offsetWidth;
         height = container.offsetHeight;
         renderSVG();
+    }
+    function showTooltip(event, data) {
+    console.log("Mouseover event triggered!");
+    const tooltip = document.getElementById('tooltip');
+    tooltip.innerHTML = `Shooting data: ${data.mean}`;
+    tooltip.style.display = 'block';
+    tooltip.style.opacity = 1;
+    tooltip.style.left = `${event.pageX}px`; // Position tooltip based on mouse position
+    tooltip.style.top = `${event.pageY}px`;
+    }
+
+    function hideTooltip() {
+        const tooltip = document.getElementById('tooltip');
+        tooltip.style.opacity = 0;
+        setTimeout(() => { tooltip.style.display = 'none'; }, 300); // Hide after transition
     }
 
     function renderSVG() {
@@ -92,27 +116,39 @@
 
         svg.append('g').attr('transform', `translate(0,${height})`).call(xAxis);
         svg.append('g').call(yAxis);
-        svg.append('rect')
-            .attr('x', xScale(middle_outer.x))
-            .attr('y', yScale(middle_outer.y))
-            .attr('width', xScale(middle_outer.width) - xScale(0))
-            .attr('height', yScale(0) - yScale(middle_outer.height))
-            .attr('fill', 'purple')
-            .attr('fill-opacity', '1');
-        svg.append('rect')
-            .attr('x', xScale(left_outer.x))
-            .attr('y', yScale(left_outer.y))
-            .attr('width', xScale(left_outer.width) - xScale(0))
-            .attr('height', yScale(0) - yScale(left_outer.height))
-            .attr('fill', 'purple')
-            .attr('fill-opacity', '1');
-        svg.append('rect')
-            .attr('x', xScale(right_outer.x))
-            .attr('y', yScale(right_outer.y))
-            .attr('width', xScale(right_outer.width) - xScale(0))
-            .attr('height', yScale(0) - yScale(right_outer.height))
-            .attr('fill', 'purple')
-            .attr('fill-opacity', '1');
+        let aboveTheBreak3Data = playerShootingData[selectedPlayer].filter(data => data.BASIC_ZONE === "Above the Break 3")
+        aboveTheBreak3Data.forEach(data => {
+            let tooltipText = `${data.BASIC_ZONE}: ${data.mean}`;
+            svg.append('rect')
+                .attr('x', xScale(middle_outer.x))
+                .attr('y', yScale(middle_outer.y))
+                .attr('width', xScale(middle_outer.width) - xScale(0))
+                .attr('height', yScale(0) - yScale(middle_outer.height))
+                .attr('fill', 'purple')
+                .attr('fill-opacity', '1')
+                .on('mouseover', () => showTooltip(event, data))
+                .on('mouseout', hideTooltip);
+            svg.append('rect')
+                .attr('x', xScale(left_outer.x))
+                .attr('y', yScale(left_outer.y))
+                .attr('width', xScale(left_outer.width) - xScale(0))
+                .attr('height', yScale(0) - yScale(left_outer.height))
+                .attr('fill', 'purple')
+                .attr('fill-opacity', '1')
+                .on('mouseover', () => showTooltip(event, data))
+                .on('mouseout', hideTooltip);
+                console.log('Appended tooltip for rectangle:', tooltipText); 
+            svg.append('rect')
+                .attr('x', xScale(right_outer.x))
+                .attr('y', yScale(right_outer.y))
+                .attr('width', xScale(right_outer.width) - xScale(0))
+                .attr('height', yScale(0) - yScale(right_outer.height))
+                .attr('fill', 'purple')
+                .attr('fill-opacity', '1')
+                .on('mouseover', () => showTooltip(event, data))
+                .on('mouseout', hideTooltip);
+        });
+
         svg.append('rect')
             .attr('x', xScale(mid_left.x))
             .attr('y', yScale(mid_left.y))
@@ -138,7 +174,7 @@
             .attr('transform', `translate(${xScale(mid_middle.x)}, ${yScale(mid_middle.y)})`)
             .attr('d', darc)
             .attr('fill', 'yellow')
-            .attr('fill-opacity', '1')
+            .attr('fill-opacity', '1');
 
         svg.append('rect')
             .attr('x', xScale(leftcornerregion.x))
@@ -184,12 +220,7 @@
             .attr('fill', 'orange')
             .attr('fill-opacity', '1');
         
-        svg.append('image')
-            .attr('xlink:href', 'src/overlay.png')
-            .attr('x', 0)
-            .attr('y', 0)
-            .attr('width', width)
-            .attr('height', height);
+    
     }
 
     // Handle dropdown change event
@@ -202,6 +233,7 @@
         playerImageSrc = playerImages[selectedOption];
         renderSVG();
     }
+
 </script>
 
 <style>
@@ -241,7 +273,14 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
-    }
+}
+    #tooltip{
+        background: white;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        display: none; /* Hidden by default */
+}
 </style>
 
 <div id="container">
@@ -265,3 +304,5 @@
     </div>
     {/if}
 </div>
+<div id="tooltip" style="position: absolute; opacity: 1; pointer-events: none; transition: opacity 0.2s;"></div>
+
