@@ -184,20 +184,23 @@
             .attr('fill', 'orange')
             .attr('fill-opacity', '1');
         
-            svg.append('image')
-                .attr('xlink:href', 'src/overlay.png')
-                .attr('x', 0)
-                .attr('y', 0)
-                .attr('width', width)
-                .attr('height', height);
+        svg.append('image')
+            .attr('xlink:href', 'src/overlay.png')
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('width', width)
+            .attr('height', height);
     }
 
     // Handle dropdown change event
     function handleDropdownChange(event) {
         // Get the selected option value
         const selectedOption = event.target.value;
+        // Update selected player
+        selectedPlayer = selectedOption;
         // Get the corresponding photo filename from the mapping object
-        selectedPhoto = optionPhotoMap[selectedOption];
+        playerImageSrc = playerImages[selectedOption];
+        renderSVG();
     }
 </script>
 
@@ -254,32 +257,10 @@
 
         <!-- Dropdown menu for changing players -->
         <label for="playerDropdown">Change Player:</label>
-        <select id="playerDropdown" bind:value={selectedPlayer}>
-            <option value="LeBron James">LeBron James</option>
-            <option value="Kevin Durant">Kevin Durant</option>
-            <option value="Giannis Antetokounmpo">Giannis Antetokounmpo</option>
-            <option value="Joel Embiid">Joel Embiid</option>
-            <option value="Stephen Curry">Stephen Curry</option>
-            <option value="Ja Morant">Ja Morant</option>
-            <option value="DeMar DeRozan">DeMar DeRozan</option>
-            <option value="Jayson Tatum">Jayson Tatum</option>
-            <option value="Nikola Jokic">Nikola Jokic</option>
-            <option value="Andrew Wiggins">Andrew Wiggins</option>
-            <option value="Trae Young">Trae Young</option>
-            <option value="Devin Booker">Devin Booker</option>
-            <option value="Luka Doncic">Luka Doncic</option>
-            <option value="Karl-Anthony Towns">Karl-Anthony Towns</option>
-            <option value="Darius Garland">Darius Garland</option>
-            <option value="Zach LaVine">Zach LaVine</option>
-            <option value="Chris Paul">Chris Paul</option>
-            <option value="Dejounte Murray">Dejounte Murray</option>
-            <option value="Jimmy Butler">Jimmy Butler</option>
-            <option value="Khris Middleton">Khris Middleton</option>
-            <option value="Donovan Mitchell">Donovan Mitchell</option>
-            <option value="LaMelo Ball">LaMelo Ball</option>
-            <option value="Fred VanVleet">Fred VanVleet</option>
-            <option value="Rudy Gobert">Rudy Gobert</option>
-            <option value="James Harden">James Harden</option>
+        <select id="playerDropdown" on:change={handleDropdownChange}>
+            {#each Object.keys(playerImages) as player}
+                <option value={player}>{player}</option>
+            {/each}
         </select>
     </div>
     {/if}
