@@ -4,14 +4,6 @@
     const { debounce } = pkg;
     import * as d3 from 'd3';
 
-    let width = 0;
-    let height = 0;
-    let leftcornerregion = { x: 0, y: 40.2, width: 6, height: 100 };
-    let rightcornerregion = { x: 93.9, y: 40.2, width: 6.5, height: 100 };
-    let paintregion = { x: 33.9, y: 56, width: 32, height: 44.2 };
-    let restrictedregion = { x: 49.9, y: 14.5 };
-    let restrictedregion_rec = { x: 42, y: 14.5, width: 15.65, height: 2.4 };
-
     let svg;
     let showPlayerInfo = true;
     let selectedPlayer = "LeBron James";
@@ -43,6 +35,19 @@
         "James Harden": 'src/routes/data/photos/jamesharden1.jpeg'
     };
     let playerImageSrc = playerImages[selectedPlayer];
+    let width = 0;
+    let height = 0;
+    let leftcornerregion = { x: 0, y: 40.2, width: 6, height: 28.5};
+    let rightcornerregion = { x: 93.9, y: 40.2, width: 6.5, height: 28.5};
+    let paintregion = { x: 33.9, y: 56, width: 32, height: 44.2 };
+    let restrictedregion = { x: 49.9, y: 14.5 };
+    let restrictedregion_rec = { x: 42, y: 14.55, width: 15.9, height: 2.4 };
+    let middle_outer = {x: 0, y: 100, width: 100, height: 44.2}
+    let left_outer = {x: 0, y: 55.8, width: 34, height: 15.8}
+    let right_outer = {x: 65.9, y: 55.8, width: 35, height: 15.8}
+    let mid_left = {x: 6, y: 40.2, width: 28, height: 28.5}
+    let mid_right = {x: 66, y: 40.2, width: 27.8, height: 28.5}
+    let mid_middle = { x: 50, y: 14};
 
     // Check if document is defined before running client-side code
     if (typeof document !== 'undefined') {
@@ -54,10 +59,6 @@
 
             window.addEventListener('resize', debounce(handleResize, 300));
             renderSVG();
-        });
-
-        afterUpdate(() => {
-            playerImageSrc = playerImages[selectedPlayer];
         });
 
         onDestroy(() => {
@@ -86,11 +87,58 @@
 
         const xAxis = d3.axisBottom(xScale);
         const yAxis = d3.axisLeft(yScale);
-
+        
         svg.attr('width', width).attr('height', height);
 
         svg.append('g').attr('transform', `translate(0,${height})`).call(xAxis);
         svg.append('g').call(yAxis);
+        svg.append('rect')
+            .attr('x', xScale(middle_outer.x))
+            .attr('y', yScale(middle_outer.y))
+            .attr('width', xScale(middle_outer.width) - xScale(0))
+            .attr('height', yScale(0) - yScale(middle_outer.height))
+            .attr('fill', 'purple')
+            .attr('fill-opacity', '1');
+        svg.append('rect')
+            .attr('x', xScale(left_outer.x))
+            .attr('y', yScale(left_outer.y))
+            .attr('width', xScale(left_outer.width) - xScale(0))
+            .attr('height', yScale(0) - yScale(left_outer.height))
+            .attr('fill', 'purple')
+            .attr('fill-opacity', '1');
+        svg.append('rect')
+            .attr('x', xScale(right_outer.x))
+            .attr('y', yScale(right_outer.y))
+            .attr('width', xScale(right_outer.width) - xScale(0))
+            .attr('height', yScale(0) - yScale(right_outer.height))
+            .attr('fill', 'purple')
+            .attr('fill-opacity', '1');
+        svg.append('rect')
+            .attr('x', xScale(mid_left.x))
+            .attr('y', yScale(mid_left.y))
+            .attr('width', xScale(mid_left.width) - xScale(0))
+            .attr('height', yScale(0) - yScale(mid_left.height))
+            .attr('fill', 'yellow')
+            .attr('fill-opacity', '1');
+        svg.append('rect')
+            .attr('x', xScale(mid_right.x))
+            .attr('y', yScale(mid_right.y))
+            .attr('width', xScale(mid_right.width) - xScale(0))
+            .attr('height', yScale(0) - yScale(mid_right.height))
+            .attr('fill', 'yellow')
+            .attr('fill-opacity', '1');
+        let second_radius = Math.min(width, height) / 2 * 1.40;
+        const darc = d3.arc()
+            .innerRadius(0)
+            .outerRadius(second_radius)
+            .startAngle(-Math.PI / 2)
+            .endAngle(Math.PI / 2);
+
+        svg.append('path')
+            .attr('transform', `translate(${xScale(mid_middle.x)}, ${yScale(mid_middle.y)})`)
+            .attr('d', darc)
+            .attr('fill', 'yellow')
+            .attr('fill-opacity', '1')
 
         svg.append('rect')
             .attr('x', xScale(leftcornerregion.x))
@@ -98,7 +146,7 @@
             .attr('width', xScale(leftcornerregion.width) - xScale(0))
             .attr('height', yScale(0) - yScale(leftcornerregion.height))
             .attr('fill', 'blue')
-            .attr('fill-opacity', '0.5');
+            .attr('fill-opacity', '1');
 
         svg.append('rect')
             .attr('x', xScale(rightcornerregion.x))
@@ -106,7 +154,7 @@
             .attr('width', xScale(rightcornerregion.width) - xScale(0))
             .attr('height', yScale(0) - yScale(rightcornerregion.height))
             .attr('fill', 'red')
-            .attr('fill-opacity', '0.5');
+            .attr('fill-opacity', '1');
 
         svg.append('rect')
             .attr('x', xScale(paintregion.x))
@@ -114,8 +162,8 @@
             .attr('width', xScale(paintregion.width) - xScale(0))
             .attr('height', yScale(0) - yScale(paintregion.height))
             .attr('fill', 'green')
-            .attr('fill-opacity', '0.5');
-        let radius = Math.min(width, height) / 2 * .235;
+            .attr('fill-opacity', '1');
+            let radius = Math.min(width, height) / 2 * .235;
         const arc = d3.arc()
             .innerRadius(0)
             .outerRadius(radius)
@@ -126,7 +174,7 @@
             .attr('transform', `translate(${xScale(restrictedregion.x)}, ${yScale(restrictedregion.y)})`)
             .attr('d', arc)
             .attr('fill', 'orange')
-            .attr('fill-opacity', '0.5');
+            .attr('fill-opacity', '1');
 
         svg.append('rect')
             .attr('x', xScale(restrictedregion_rec.x))
@@ -134,7 +182,14 @@
             .attr('width', xScale(restrictedregion_rec.width) - xScale(0))
             .attr('height', yScale(0) - yScale(restrictedregion_rec.height))
             .attr('fill', 'orange')
-            .attr('fill-opacity', '0.5');
+            .attr('fill-opacity', '1');
+        
+            svg.append('image')
+                .attr('xlink:href', 'src/overlay.png')
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr('width', width)
+                .attr('height', height);
     }
 
     // Handle dropdown change event
@@ -173,7 +228,7 @@
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        color: white;
+        color: black;
         font-family: Arial, sans-serif;
     }
 
