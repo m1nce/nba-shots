@@ -682,28 +682,6 @@ p {
 .frequency-scale span {
     margin-bottom: 5px;
 }
-
-        body {
-            font-family: 'Playfair Display', serif;
-        }
-        .gradient-text {
-            /* Define the text gradient */
-            background: rgb(251,255,0);
-            background: linear-gradient(0deg, rgba(251,255,0,1) 0%, rgba(255,0,0,1) 100%);
-            
-            /* Make the background clip to the text */
-            -webkit-background-clip: text;
-            background-clip: text;
-            
-            /* Use this to make the text transparent and allow the background to show through */
-            color: transparent;
-
-            font-weight: bold;
-            
-            /* Other styling */
-            display: inline;
-        }
-
 </style>
 
 <div id="container">
