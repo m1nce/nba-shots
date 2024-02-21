@@ -1,4 +1,7 @@
-<h1>Hottest Players in the NBA (By FG%)</h1><head><link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'></head>
+<body>
+    <h1>The <span class="gradient-text">HOTTEST</span> </h1>
+    <h1>NBA Players</h1>
+</body>
 <p>Based on players that were in the 2022 NBA All Star Draft, we see which players shoot better from six different zones. The redder the hotter and better they are in comparison to the roster average!</p>
 <script>
     import { onMount, onDestroy, afterUpdate } from 'svelte';
@@ -586,6 +589,8 @@ function hideTooltip() {
 
 </script>
 
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet'>
+
 <style>
     #container {
     position: relative;
@@ -597,6 +602,8 @@ h1 {
     text-align:center;
     font-family: 'Playfair Display';font-size: 22px;
     font-size: 45px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
     img {
         display: block;
@@ -676,6 +683,27 @@ h1 {
 .frequency-scale span {
     margin-bottom: 5px;
 }
+
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            /* Define the text gradient */
+            background: rgb(251,255,0);
+            background: linear-gradient(0deg, rgba(251,255,0,1) 0%, rgba(255,0,0,1) 100%);
+            
+            /* Make the background clip to the text */
+            -webkit-background-clip: text;
+            background-clip: text;
+            
+            /* Use this to make the text transparent and allow the background to show through */
+            color: transparent;
+
+            font-weight: bold;
+            
+            /* Other styling */
+            display: inline;
+        }
 
 </style>
 
