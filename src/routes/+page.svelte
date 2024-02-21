@@ -685,7 +685,7 @@ p {
 </style>
 
 <div id="container">
-    <img src='static/nbacourt.jpg' alt='Basketball Court' width="500" height="500">
+    <img src='/nbacourt.jpg' alt='Basketball Court' width="500" height="500">
     <svg id="overlay"></svg>
 
     {#if showPlayerInfo}
