@@ -805,6 +805,18 @@
             "mean": 0.0
         },
         {
+            "BASIC_ZONE": "Right Corner 3",
+            "sum": 0,
+            "count": 0,
+            "mean": 0.0
+        },
+        {
+            "BASIC_ZONE": "Left Corner 3",
+            "sum": 0,
+            "count": 0,
+            "mean": 0.0
+        },
+        {
             "BASIC_ZONE": "In The Paint (Non-RA)",
             "sum": 20,
             "count": 58,
