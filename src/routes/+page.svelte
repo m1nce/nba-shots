@@ -1,7 +1,4 @@
-<body>
-    <h1>The <span class="gradient-text">HOTTEST</span> </h1>
-    <h1>NBA Players</h1>
-</body>
+<h1>The Hottest NBA Players</h1><head><link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'></head>
 <p>Based on players that were in the 2022 NBA All Star Draft, we see which players shoot better from six different zones. The redder the hotter and better they are in comparison to the roster average!</p>
 <script>
     import { onMount, onDestroy, afterUpdate } from 'svelte';
@@ -660,7 +657,9 @@ h1 {
     position: relative;
     margin-bottom: 10px;
 }
-
+p {
+    text-align:center
+}
 .gradient-bar {
     width: 240px; /* Increased width to accommodate NA section */
     height: 20px;
