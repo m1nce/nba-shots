@@ -50,7 +50,7 @@
     let mid_left = {x: 6, y: 40.2, width: 28, height: 28.5}
     let mid_right = {x: 66, y: 40.2, width: 27.8, height: 28.5}
     let mid_middle = { x: 50, y: 14};
-    let playershooting = 'src/routes/data/player_stats.json';
+    let playershooting = `${base}/player_stats.json`;
     let playerShootingData;
     let averages = {"Above the Break 3": 0.3641223979,
                     "In The Paint (Non-RA)": 0.4604816551,
