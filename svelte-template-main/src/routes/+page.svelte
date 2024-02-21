@@ -59,6 +59,7 @@
             width = container.offsetWidth;
             height = container.offsetHeight;
             svg = d3.select('#overlay');
+            svg.on('mousemove', moveTooltip);
 
             window.addEventListener('resize', debounce(handleResize, 300));
             fetch(playershooting)
@@ -81,20 +82,43 @@
         height = container.offsetHeight;
         renderSVG();
     }
-    function showTooltip(event, data) {
-    console.log("Mouseover event triggered!");
+
+    function moveTooltip(event) {
     const tooltip = document.getElementById('tooltip');
-    tooltip.innerHTML = `Shooting data: ${data.mean}`;
-    tooltip.style.display = 'block';
-    tooltip.style.opacity = 1;
-    tooltip.style.left = `${event.pageX}px`; // Position tooltip based on mouse position
-    tooltip.style.top = `${event.pageY}px`;
+    const fill = event.target.getAttribute('fill');
+
+    if (fill === 'purple' || fill === 'yellow') {
+        tooltip.style.display = 'block';
+        tooltip.style.opacity = 1;
+        tooltip.style.left = `${event.pageX + 10}px`;
+        tooltip.style.top = `${event.pageY + 10}px`;
+
+        // You may want to modify this to set the tooltip text based on the fill
+        if (fill === 'purple') {
+            // Set tooltip for purple (Above the Break 3)
+            const data = playerShootingData[selectedPlayer].find(d => d.BASIC_ZONE === "Above the Break 3");
+            showTooltip(data);
+        } else if (fill === 'yellow') {
+            // Set tooltip for yellow (Mid-Range)
+            const data = playerShootingData[selectedPlayer].find(d => d.BASIC_ZONE === "Mid-Range");
+            showTooltip(data);
+        }
+    } else {
+        hideTooltip();
     }
+}
+
+
+function showTooltip(data) {
+    const tooltip = document.getElementById('tooltip');
+    tooltip.innerHTML = `FG Made: ${data.sum}<br>` +`FG Attempted: ${data.count}<br>` +
+                        `FG%: ${String(Math.round(data.mean * 100 * 100) / 100)+ '%'}`;
+}
 
     function hideTooltip() {
         const tooltip = document.getElementById('tooltip');
         tooltip.style.opacity = 0;
-        setTimeout(() => { tooltip.style.display = 'none'; }, 300); // Hide after transition
+        setTimeout(() => { tooltip.style.display = 'none'; }, 300);
     }
 
     function renderSVG() {
@@ -148,33 +172,41 @@
                 .on('mouseover', () => showTooltip(event, data))
                 .on('mouseout', hideTooltip);
         });
-
-        svg.append('rect')
+        let mid_range = playerShootingData[selectedPlayer].filter(data => data.BASIC_ZONE === "Mid-Range")
+        mid_range.forEach(data => {
+            svg.append('rect')
             .attr('x', xScale(mid_left.x))
             .attr('y', yScale(mid_left.y))
             .attr('width', xScale(mid_left.width) - xScale(0))
             .attr('height', yScale(0) - yScale(mid_left.height))
             .attr('fill', 'yellow')
-            .attr('fill-opacity', '1');
-        svg.append('rect')
-            .attr('x', xScale(mid_right.x))
-            .attr('y', yScale(mid_right.y))
-            .attr('width', xScale(mid_right.width) - xScale(0))
-            .attr('height', yScale(0) - yScale(mid_right.height))
-            .attr('fill', 'yellow')
-            .attr('fill-opacity', '1');
-        let second_radius = Math.min(width, height) / 2 * 1.40;
-        const darc = d3.arc()
-            .innerRadius(0)
-            .outerRadius(second_radius)
-            .startAngle(-Math.PI / 2)
-            .endAngle(Math.PI / 2);
+            .attr('fill-opacity', '1')
+            .on('mouseover', () => showTooltip(event, data))
+            .on('mouseout', hideTooltip);
+            svg.append('rect')
+                .attr('x', xScale(mid_right.x))
+                .attr('y', yScale(mid_right.y))
+                .attr('width', xScale(mid_right.width) - xScale(0))
+                .attr('height', yScale(0) - yScale(mid_right.height))
+                .attr('fill', 'yellow')
+                .attr('fill-opacity', '1')
+                .on('mouseover', () => showTooltip(event, data))
+                .on('mouseout', hideTooltip);
+            let second_radius = Math.min(width, height) / 2 * 1.40;
+            const darc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(second_radius)
+                .startAngle(-Math.PI / 2)
+                .endAngle(Math.PI / 2);
 
-        svg.append('path')
-            .attr('transform', `translate(${xScale(mid_middle.x)}, ${yScale(mid_middle.y)})`)
-            .attr('d', darc)
-            .attr('fill', 'yellow')
-            .attr('fill-opacity', '1');
+            svg.append('path')
+                .attr('transform', `translate(${xScale(mid_middle.x)}, ${yScale(mid_middle.y)})`)
+                .attr('d', darc)
+                .attr('fill', 'yellow')
+                .attr('fill-opacity', '1')
+                .on('mouseover', () => showTooltip(event, data))
+                .on('mouseout', hideTooltip);
+        });
 
         svg.append('rect')
             .attr('x', xScale(leftcornerregion.x))
@@ -238,11 +270,18 @@
 
 <style>
     #container {
-        position: relative;
-        width: 100%;
-        margin-bottom: 350px; /* Adjust the padding as needed */
-    }
+    position: relative;
+    width: 50%;
+    margin-left: 0%;
+    margin-bottom: 30px;
+}
 
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        left: 500px;
+    }
     #overlay {
         position: absolute;
         top: 0;
@@ -251,21 +290,14 @@
         height: 100%;
     }
 
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
     #player-info {
-        position: absolute;
-        bottom: -300px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        color: black;
-        font-family: Arial, sans-serif;
-    }
+    position: absolute;
+    top: 0;
+    left: 650px;
+    text-align: left;
+    color: black;
+    font-family: Arial, sans-serif;
+}
 
     #player-image {
         width: 263px; /* Adjust the size as needed */
