@@ -9,7 +9,6 @@
     let svg;
     let showPlayerInfo = true;
     let selectedPlayer = "LeBron James";
-    {`${base}/nbacourt.jpg`}
     let playerImages = {
         "LeBron James": `${base}/lebronjames23.jpeg`,
         "Kevin Durant": `${base}/kevindurant35.jpeg`,
