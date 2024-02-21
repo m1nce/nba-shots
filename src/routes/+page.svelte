@@ -9,31 +9,31 @@
     let showPlayerInfo = true;
     let selectedPlayer = "LeBron James";
     let playerImages = {
-        "LeBron James": 'src/routes/data/photos/lebronjames23.jpeg',
-        "Kevin Durant": 'src/routes/data/photos/kevindurant35.jpeg',
-        "Giannis Antetokounmpo": 'src/routes/data/photos/giannis34.jpeg',
-        "Joel Embiid": 'src/routes/data/photos/joelembiid21.jpeg',
-        "Stephen Curry": 'src/routes/data/photos/stephencurry30.jpeg',
-        "Ja Morant": 'src/routes/data/photos/jamorant12.jpeg',
-        "DeMar DeRozan": 'src/routes/data/photos/demarderozan11.jpeg',
-        "Jayson Tatum": 'src/routes/data/photos/jaysontatum0.jpeg',
-        "Nikola Jokic": 'src/routes/data/photos/nikolajokic15.jpeg',
-        "Andrew Wiggins": 'src/routes/data/photos/andrewwiggins22.jpeg',
-        "Trae Young": 'src/routes/data/photos/traeyoung11.jpeg',
-        "Devin Booker": 'src/routes/data/photos/devinbooker1.jpeg',
-        "Luka Doncic": 'src/routes/data/photos/lukadoncic77.jpeg',
-        "Karl-Anthony Towns": 'src/routes/data/photos/kat32.jpeg',
-        "Darius Garland": 'src/routes/data/photos/dariusgarland10.jpeg',
-        "Zach LaVine": 'src/routes/data/photos/zachlavine8.jpeg',
-        "Chris Paul": 'src/routes/data/photos/chrispaul3.jpeg',
-        "Dejounte Murray": 'src/routes/data/photos/dejountemurray5.jpeg',
-        "Jimmy Butler": 'src/routes/data/photos/jimmybutler22.jpeg',
-        "Khris Middleton": 'src/routes/data/photos/khrismiddleton22.jpeg',
-        "Donovan Mitchell": 'src/routes/data/photos/donovanmitchell45.jpeg',
-        "LaMelo Ball": 'src/routes/data/photos/lameloball1.jpeg',
-        "Fred VanVleet": 'src/routes/data/photos/fredvanvleet5.jpeg',
-        "Rudy Gobert": 'src/routes/data/photos/rudygobert27.jpeg',
-        "James Harden": 'src/routes/data/photos/jamesharden1.jpeg'
+        "LeBron James": './src/routes/data/photos/lebronjames23.jpeg',
+        "Kevin Durant": './src/routes/data/photos/kevindurant35.jpeg',
+        "Giannis Antetokounmpo": './src/routes/data/photos/giannis34.jpeg',
+        "Joel Embiid": './src/routes/data/photos/joelembiid21.jpeg',
+        "Stephen Curry": './src/routes/data/photos/stephencurry30.jpeg',
+        "Ja Morant": './src/routes/data/photos/jamorant12.jpeg',
+        "DeMar DeRozan": './src/routes/data/photos/demarderozan11.jpeg',
+        "Jayson Tatum": './src/routes/data/photos/jaysontatum0.jpeg',
+        "Nikola Jokic": './src/routes/data/photos/nikolajokic15.jpeg',
+        "Andrew Wiggins": './src/routes/data/photos/andrewwiggins22.jpeg',
+        "Trae Young": './src/routes/data/photos/traeyoung11.jpeg',
+        "Devin Booker": './src/routes/data/photos/devinbooker1.jpeg',
+        "Luka Doncic": './src/routes/data/photos/lukadoncic77.jpeg',
+        "Karl-Anthony Towns": './src/routes/data/photos/kat32.jpeg',
+        "Darius Garland": './src/routes/data/photos/dariusgarland10.jpeg',
+        "Zach LaVine": './src/routes/data/photos/zachlavine8.jpeg',
+        "Chris Paul": './src/routes/data/photos/chrispaul3.jpeg',
+        "Dejounte Murray": './src/routes/data/photos/dejountemurray5.jpeg',
+        "Jimmy Butler": './src/routes/data/photos/jimmybutler22.jpeg',
+        "Khris Middleton": './src/routes/data/photos/khrismiddleton22.jpeg',
+        "Donovan Mitchell": './src/routes/data/photos/donovanmitchell45.jpeg',
+        "LaMelo Ball": './src/routes/data/photos/lameloball1.jpeg',
+        "Fred VanVleet": './src/routes/data/photos/fredvanvleet5.jpeg',
+        "Rudy Gobert": './src/routes/data/photos/rudygobert27.jpeg',
+        "James Harden": './src/routes/data/photos/jamesharden1.jpeg'
     };
     let playerImageSrc = playerImages[selectedPlayer];
     let width = 0;
@@ -685,7 +685,7 @@ p {
 </style>
 
 <div id="container">
-    <img src='src/nbacourt.jpg' alt='Basketball Court' width="500" height="500">
+    <img src='./src/nbacourt.jpg' alt='Basketball Court' width="500" height="500">
     <svg id="overlay"></svg>
 
     {#if showPlayerInfo}
