@@ -1,6 +1,7 @@
 <h1>The Hottest NBA Players</h1><head><link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'></head>
 <p>Based on players that were in the 2022 NBA All Star Draft, we see which players shoot better from six different zones. The redder the hotter and better they are in comparison to the roster average!</p>
 <script>
+    import { base } from '$app/paths';
     import { onMount, onDestroy, afterUpdate } from 'svelte';
     import pkg from 'lodash';
     const { debounce } = pkg;
@@ -685,7 +686,7 @@ p {
 </style>
 
 <div id="container">
-    <img src='/nbacourt.jpg' alt='Basketball Court' width="500" height="500">
+    <img src={`${base}/nbacourt.jpg`} alt="Basketball Court">
     <svg id="overlay"></svg>
 
     {#if showPlayerInfo}
