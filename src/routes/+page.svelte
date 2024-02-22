@@ -612,6 +612,7 @@
 
 <style>
     #container {
+        animation: fadeIn 1s ease-out;
         position: relative;
         width: 50%;
         margin-left: 8%;
@@ -681,6 +682,7 @@
     }
 
     #legend {
+        animation: fadeIn 1s ease-out;
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
@@ -698,7 +700,37 @@
         text-align:center;
         padding: 3% 10%;
     }
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }}
+    @keyframes fadeInright {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-20);
+    }
+}
+h1 {
+    animation: fadeIn 1s ease-out;
+    /* Other styles... */
+}
+h4 {
+    animation: fadeInright 1s ease-out;
+}
 
+p {
+    animation: fadeIn 1.5s ease-out;
+    /* Other styles... */
+}
     .gradient-bar {
         width: 240px; /* Increased width to accommodate NA section */
         height: 20px;
