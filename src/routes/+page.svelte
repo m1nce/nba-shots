@@ -97,7 +97,7 @@
                             `FG Made: ${data.sum}<br>` +
                             `FG Attempted: ${data.count}<br>` +
                             `FG%: ${String(Math.round(data.mean * 100 * 100) / 100) + '%'}<br>` +
-                            `League Average FG%: ${String(Math.round(averages[data.BASIC_ZONE]*100)) + '%'}`;
+                            `All-Star Average FG%: ${String(Math.round(averages[data.BASIC_ZONE]*100)) + '%'}`;
         
         // Set tooltip position relative to the mouse cursor
         tooltip.style.left = `${event.pageX + 10}px`; // Adjust offset as needed
@@ -619,21 +619,46 @@
         margin-bottom: 30px;
     }
 
-
     h1 {
+        animation: fadeInright 1s ease-out;
         text-align: center;
         font-family: 'Playfair Display'; 
         font-size: 45px;
         margin-top: 10px;
     }
 
+    h2 {
+        animation: fadeIn 1s ease-out;
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 0px;
+        padding-top: 0px;
+    }
+
     h4 {
+        animation: fadeInright 1s ease-out;
         text-align: center;
         font-family: 'PT Sans', sans-serif;
         margin-left: 5%;
         margin-right: 5%;
         margin-top: 0%;
         margin-bottom: 2%;
+        padding-top: 0px;
+    }
+
+    p {
+        animation: fadeIn 1.5s ease-out;
+        text-align:center;
+        padding: 1% 10%;
+        margin-top: 0px;
+    }
+
+    hr {
+        border: none; /* Removes the default border */
+        height: 1px; /* Sets the height of the line */
+        background-color: grey; /* Sets the color of the line */
+        margin-top: 5rem; /* Adds space above the line */
+        margin-bottom: 0rem; /* Adds space below the line */
     }
 
     img {
@@ -696,41 +721,40 @@
         margin-bottom: 10px;
     }
 
-    p {
-        text-align:center;
-        padding: 3% 10%;
+    label {
+        font-weight: bold;
     }
-    @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }}
-    @keyframes fadeInright {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(-20);
-    }
-}
-h1 {
-    animation: fadeIn 1s ease-out;
-    /* Other styles... */
-}
-h4 {
-    animation: fadeInright 1s ease-out;
-}
 
-p {
-    animation: fadeIn 1.5s ease-out;
-    /* Other styles... */
-}
+    select {
+        background-color: rgb(225, 225, 225);
+        color: black; /* Setting the text color to white for better contrast */
+        border: 1.3px solid #ccc; /* Optional: adds a border */
+        padding: 0.4em; /* Optional: adds some padding inside the dropdown */
+        border-radius: 8px; /* Optional: rounds the corners of the dropdown */
+        margin-top: 2%;
+        text-align: center;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }}
+        @keyframes fadeInright {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(-20);
+        }
+    }
+
     .gradient-bar {
         width: 240px; /* Increased width to accommodate NA section */
         height: 20px;
@@ -798,7 +822,35 @@ p {
     </div>
 </div>
 
+<hr>
+<h2>Write Up:</h2>
 <p> 
-    For our interactive visualization, we decided to analyze the field goal percentage of NBA all-stars from 6 different zones on a basketball court. Choosing the zones themselves was fairly simple as the distinction was already given to us in the dataset. We chose our visual encoding to be the color of the zone itself which varied based on that particular player’s field goal percentage from that zone in comparison to the league average. We considered a variety of different color gradients/patterns but since each zone had its own average field goal percentage, it made more sense to have 5 distinct colors to allow the differences to be seen more clearly. In terms of the interaction techniques, we wanted the user to be able to look at the stats of different players, which are listed on a dropdown menu to make it easy to switch between players, and also showed a tooltip based on the zone the mouse was hovered over. We considered displaying all the data in text form on the side, but we figured that that was harder to read and that the data would stand out more if we displayed the different colors and just showed the particular data of the zone that was hovered over. <br><br>
-	As for our development process, we didn't designate specific roles or anything but we all naturally ended up working on what we needed to during that particular time. Minchan ended up doing most of the work with the data and finding all the necessary information/components for each player as well as all the zones. Jason worked on displaying the player information as well as the player pictures and being able to switch between the players. David did most of the work on setting up the zones, making sure the overlay/scale was working correctly, and making the field color appear correctly. We all ended up having to work together to discuss our design decisions as well as ironing out the countless bugs that appeared during the process. In terms of time spent working in total, we probably spent around 30 hours to end up with our finished visualization. The biggest chunk of time came from having to learn how to create our zones so that it lined up with the NBA court properly so we could even display our data in the first place. But once we figured that out, we also had to spend a good amount of time working on fixing bugs and also trying to figure out how to solve an issue that we had when rescaling the window size of the website. 
+    For our interactive visualization, we decided to analyze the field goal percentage of 
+    NBA All-Stars from 6 different zones on a basketball court. Choosing the zones themselves 
+    was fairly simple as the distinction was already given to us in the dataset. We chose our 
+    visual encoding to be the color of the zones itself which varied based on that particular 
+    player's field goal percentage from that zone in comparison to the All-Star average. 
+    We considered a variety of different color gradients/patterns but since each zone had 
+    its own average field goal percentage, it made more sense to have 5 distinct colors to 
+    allow the differences to be seen more clearly. In terms of the interaction techniques, 
+    we wanted the user to be able to look at the stats of different players, which are listed 
+    on a dropdown menu to make it easy to switch between players, and also showed a tooltip 
+    based on the zone the mouse was hovered over. We considered displaying all the data in 
+    text form on the side, but we figured that that was harder to read and that the data would 
+    stand out more if we displayed the different colors and just showed the particular data of 
+    the zone that was hovered over. <br><br>
+
+	As for our development process, we didn't designate specific roles or responsibilities but we all 
+    naturally ended up working on what we needed to during that particular time. Minchan ended up 
+    doing most of the work with the data, finding all the necessary information/components for 
+    each player, and lead the end design/styling decisions. Jason worked on displaying the player information as well 
+    as the player pictures and being able to switch between the players. David did most of the work 
+    on setting up the zones, making sure the overlay/scale was working correctly, and making the 
+    field color appear correctly. We all ended up having to work together to discuss our design 
+    decisions as well as ironing out the countless bugs that appeared during the process. In terms 
+    of time spent working in total, we probably spent around 40 hours to end up with our finished 
+    visualization. The biggest chunk of time came from having to learn how to create our zones so 
+    that it lined up with the NBA court properly so we could even display our data in the first place. 
+    But once we figured that out, we also had to spend a good amount of time working on fixing bugs and 
+    also trying to figure out how to solve an issue that we had when rescaling the window size of the website. 
 </p>
