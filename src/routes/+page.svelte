@@ -1,5 +1,5 @@
 <h1>The Hottest NBA Players</h1><head><link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet'></head>
-<p>Based on players that were in the 2022 NBA All Star Draft, we see which players shoot better from six different zones. The redder the hotter and better they are in comparison to the roster average!</p>
+<h4>Which NBA Players are the HOTTEST by Field Goal Percentage (FG%)? Only players that partook in the 2022 NBA All-Star Draft are included. The redder the zone, the hotter and better they are in comparison to the All-Star roster average!</h4>
 <script>
     import { base } from '$app/paths';
     import { onMount, onDestroy, afterUpdate } from 'svelte';
@@ -96,7 +96,8 @@
         tooltip.innerHTML = `<b>${data.BASIC_ZONE}</b>:<br>` + 
                             `FG Made: ${data.sum}<br>` +
                             `FG Attempted: ${data.count}<br>` +
-                            `FG%: ${String(Math.round(data.mean * 100 * 100) / 100) + '%'}`;
+                            `FG%: ${String(Math.round(data.mean * 100 * 100) / 100) + '%'}<br>` +
+                            `League Average FG%: ${String(Math.round(averages[data.BASIC_ZONE]*100)) + '%'}`;
         
         // Set tooltip position relative to the mouse cursor
         tooltip.style.left = `${event.pageX + 10}px`; // Adjust offset as needed
@@ -105,6 +106,8 @@
         tooltip.style.opacity='1';
         tooltip.style.display = 'block';
     }  
+
+
 
     function hideTooltip() {
         const tooltip = document.getElementById('tooltip');
@@ -217,9 +220,7 @@
         let mid_range = playerShootingData[selectedPlayer].filter(data => data.BASIC_ZONE === "Mid-Range");
         mid_range.forEach(data => {
             let fillcolor = 'black'
-            console.log(data.mean - averages[data.BASIC_ZONE])
             if (data.mean - averages[data.BASIC_ZONE] < -.06) {
-                console.log('shit')
                 fillcolor = '#5b52d5';
             } else if (data.mean - averages[data.BASIC_ZONE] < -.02) {
                 fillcolor = '#7f54af';
@@ -322,10 +323,8 @@
         left_cornery.forEach(data => {
             let fillcolor = 'black'
             if (data.mean - averages[data.BASIC_ZONE] < -.06) {
-                console.log(data.mean)
                 fillcolor = '#5b52d5';
             } else if (data.mean - averages[data.BASIC_ZONE] < -.02) {
-                console.log(data.mean)
                 fillcolor = '#7f54af';
             } else if (data.mean - averages[data.BASIC_ZONE] < 0) {
                 fillcolor = '#9a5694';
@@ -365,10 +364,8 @@
         right_cornery.forEach(data => {
             let fillcolor = 'black'
             if (data.mean - averages[data.BASIC_ZONE] < -.06) {
-                console.log(data.mean)
                 fillcolor = '#5b52d5';
             } else if (data.mean - averages[data.BASIC_ZONE] < -.02) {
-                console.log(data.mean)
                 fillcolor = '#7f54af';
             } else if (data.mean - averages[data.BASIC_ZONE] < 0) {
                 fillcolor = '#9a5694';
@@ -408,10 +405,8 @@
         dapaint.forEach(data => {
             let fillcolor = 'black'
             if (data.mean - averages[data.BASIC_ZONE] < -.06) {
-                console.log(data.mean)
                 fillcolor = '#5b52d5';
             } else if (data.mean - averages[data.BASIC_ZONE] < -.02) {
-                console.log(data.mean)
                 fillcolor = '#7f54af';
             } else if (data.mean - averages[data.BASIC_ZONE] < 0) {
                 fillcolor = '#9a5694';
@@ -455,10 +450,8 @@
         dara.forEach(data => {
             let fillcolor = 'black'
             if (data.mean - averages[data.BASIC_ZONE] < -.06) {
-                console.log(data.mean)
                 fillcolor = '#5b52d5';
             } else if (data.mean - averages[data.BASIC_ZONE] < -.02) {
-                console.log(data.mean)
                 fillcolor = '#7f54af';
             } else if (data.mean - averages[data.BASIC_ZONE] < 0) {
                 fillcolor = '#9a5694';
@@ -615,22 +608,31 @@
 </script>
 
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet'>
-
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
 
 <style>
     #container {
         position: relative;
         width: 50%;
-        margin-left: 0%;
+        margin-left: 8%;
         margin-bottom: 30px;
     }
+
 
     h1 {
         text-align: center;
         font-family: 'Playfair Display'; 
         font-size: 45px;
         margin-top: 10px;
-        margin-bottom: 5px;
+    }
+
+    h4 {
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 0%;
+        margin-bottom: 2%;
     }
 
     img {
@@ -684,6 +686,7 @@
         flex-direction: column;
         align-items: left;
         margin-top: 20px;
+        margin-left: 8%
     }
 
     #gradient-legend {
@@ -692,7 +695,8 @@
     }
 
     p {
-        text-align:center
+        text-align:center;
+        padding: 3% 10%;
     }
 
     .gradient-bar {
@@ -720,25 +724,26 @@
     }
 </style>
 
+
 <div id="container">
     <img src={`${base}/nbacourt.jpg`} alt="Basketball Court">
     <svg id="overlay"></svg>
 
     {#if showPlayerInfo}
-    <div id="player-info">
+        <div id="player-info">
 
-        <!-- Player information -->
-        <h2>{selectedPlayer}</h2>
-        <img src={playerImageSrc} alt={selectedPlayer} id="player-image">
+            <!-- Player information -->
+            <h2>{selectedPlayer}</h2>
+            <img src={playerImageSrc} alt={selectedPlayer} id="player-image">
 
-        <!-- Dropdown menu for changing players -->
-        <label for="playerDropdown">Change Player:</label>
-        <select id="playerDropdown" on:change={handleDropdownChange}>
-            {#each Object.keys(playerImages) as player}
-                <option value={player}>{player}</option>
-            {/each}
-        </select>
-    </div>
+            <!-- Dropdown menu for changing players -->
+            <label for="playerDropdown">Change Player:</label>
+            <select id="playerDropdown" on:change={handleDropdownChange}>
+                {#each Object.keys(playerImages) as player}
+                    <option value={player}>{player}</option>
+                {/each}
+            </select>
+        </div>
     {/if}
 </div>
 
@@ -761,3 +766,7 @@
     </div>
 </div>
 
+<p> 
+    For our interactive visualization, we decided to analyze the field goal percentage of NBA all-stars from 6 different zones on a basketball court. Choosing the zones themselves was fairly simple as the distinction was already given to us in the dataset. We chose our visual encoding to be the color of the zone itself which varied based on that particular player’s field goal percentage from that zone in comparison to the league average. We considered a variety of different color gradients/patterns but since each zone had its own average field goal percentage, it made more sense to have 5 distinct colors to allow the differences to be seen more clearly. In terms of the interaction techniques, we wanted the user to be able to look at the stats of different players, which are listed on a dropdown menu to make it easy to switch between players, and also showed a tooltip based on the zone the mouse was hovered over. We considered displaying all the data in text form on the side, but we figured that that was harder to read and that the data would stand out more if we displayed the different colors and just showed the particular data of the zone that was hovered over. <br><br>
+	As for our development process, we didn't designate specific roles or anything but we all naturally ended up working on what we needed to during that particular time. Minchan ended up doing most of the work with the data and finding all the necessary information/components for each player as well as all the zones. Jason worked on displaying the player information as well as the player pictures and being able to switch between the players. David did most of the work on setting up the zones, making sure the overlay/scale was working correctly, and making the field color appear correctly. We all ended up having to work together to discuss our design decisions as well as ironing out the countless bugs that appeared during the process. In terms of time spent working in total, we probably spent around 30 hours to end up with our finished visualization. The biggest chunk of time came from having to learn how to create our zones so that it lined up with the NBA court properly so we could even display our data in the first place. But once we figured that out, we also had to spend a good amount of time working on fixing bugs and also trying to figure out how to solve an issue that we had when rescaling the window size of the website. 
+</p>
