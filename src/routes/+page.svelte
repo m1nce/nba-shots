@@ -845,8 +845,8 @@
     doing most of the work with the data, finding all the necessary information/components for 
     each player, and lead the end design/styling decisions. Jason worked on displaying the player information as well 
     as the player pictures and being able to switch between the players. David did most of the work 
-    on setting up the zones, making sure the overlay/scale was working correctly, and making the 
-    field color appear correctly. We all ended up having to work together to discuss our design 
+    on setting up the zones, making sure the overlay/scale was working correctly, implementing the tooltip correctly, and 
+    making the field color appear correctly. We all ended up having to work together to discuss our design 
     decisions as well as ironing out the countless bugs that appeared during the process. In terms 
     of time spent working in total, we probably spent around 40 hours to end up with our finished 
     visualization. The biggest chunk of time came from having to learn how to create our zones so 
