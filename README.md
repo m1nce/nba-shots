@@ -7,7 +7,7 @@
   This project aims to discover which NBA All-Star players from the 2022 All-Star Draft are the hottest. We determined being "hot" as field goal percentages in certain zones on the court: the Restricted Area, the Paint, Mid-Range, Left Corner 3, Right Corner 3, and Above the Break 3. 
 </p>
 
-### Built With
+## Built With
 
 Major frameworks/libraries/languages used in this project:
 
