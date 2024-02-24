@@ -15,6 +15,14 @@ Major frameworks/libraries/languages used in this project:
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![JavaScript][Javascript]][Javascript-url]
 
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTORS -->
 ## Created by:
 * David Moon
 * Minchan Kim
