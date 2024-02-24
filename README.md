@@ -22,9 +22,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTRIBUTORS -->
 ## Created by:
-* David Moon
-* Minchan Kim
-* Jason Kim
+* [David Moon](https://github.com/D2jc)
+* [Minchan Kim](https://github.com/m1nce)
+* [Jason Kim](https://github.com/JasonKim18)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
